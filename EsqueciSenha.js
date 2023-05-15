@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import auth from '@react-native-firebase/auth';
+
+import firebase from './firebaseConfig';
 
 export default function EsqueciSenha() {
+  const [email, setEmail] = useState('');
+
+  const enviarEmail = async () => {
+    try {
+      await firebase.auth().sendPasswordResetEmail(email);
+      console.log('E-mail de redefinição de senha enviado com sucesso');
+    } catch (error) {
+      console.log('Erro ao enviar o e-mail de redefinição de senha:', error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Esqueceu sua senha?</Text>
@@ -14,9 +28,11 @@ export default function EsqueciSenha() {
           keyboardType="email-address"
           autoCapitalize="none"
           autoCorrect={false}
+          value={email}
+          onChangeText={(text) => setEmail(text)}
         />
       </View>
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.buttonContainer} onPress={enviarEmail}>
         <Text style={styles.buttonText}>Enviar</Text>
       </TouchableOpacity>
     </View>

@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import firebase from 'firebase';
 
-import firebaseConfig from './firebaseConfig';
 import CadastroUsuario from './CadastroUsuario';
 
 import EsqueciSenha from './EsqueciSenha';
