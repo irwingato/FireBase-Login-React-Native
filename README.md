@@ -9,6 +9,7 @@ All projects created in Snack are publicly available, so you can easily share th
 If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.io/c/snack).
 
 Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+
 TELA DE LOGIN
 
 ![image](https://github.com/irwingato/FireBase-Login-React-Native/assets/45997584/d3a45682-0ada-4208-88e2-a0527064e53d)
